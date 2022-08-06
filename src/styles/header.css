@@ -1,7 +1,7 @@
-li a{
+.header li a{
     color: azure !important;
 }
 
-li a:hover{
+.header li a:hover{
     color: rgb(6, 93, 255) !important;
 }

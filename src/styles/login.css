@@ -43,6 +43,7 @@ body {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
   top:0;
@@ -52,6 +53,7 @@ body {
   color: #fff;
   pointer-events: none;
   transition: .5s;
+  background: transparent;
 }
 
 .login-box .user-box input:focus ~ label,
@@ -60,7 +62,7 @@ body {
   left: 0;
   color: #03e9f4;
   font-size: 12px;
-}
+} 
 
 .login-box form button {
   position: relative;
@@ -73,7 +75,9 @@ body {
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
+  background: rgba(0, 0, 0, .1);
+  border: none;
 }
 
 .login-box button:hover {

@@ -27,22 +27,22 @@ console.log('Ingresaste correctamente')
 
   return (
     <div className="login-box">
-  <h2>Login</h2>
+  <h2>Ingresar</h2>
   <form onSubmit={ submitHandler }>
     <div className="user-box">
-      <input type="text" name="email"/>
-      <label>Username</label>
+      <input type="text" name="email" id='email' autoComplete='true' placeholder=' ej: javicavalero56@gmail.com' />
+      <label htmlFor='email'>Email</label>
     </div>
     <div className="user-box">
-      <input type="password" name="password"/>
-      <label>Password</label>
+      <input type="password" name="password" id='password' autoComplete='true' placeholder='***********' />
+      <label htmlFor='password'>Contraseña</label>
     </div>
-    <button type="submit">
+    <button type="submit" >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      Submit
+      Envíar
     </button>
   </form>
 </div>
