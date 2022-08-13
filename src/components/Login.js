@@ -30,11 +30,11 @@ console.log('Ingresaste correctamente')
   <h2>Ingresar</h2>
   <form onSubmit={ submitHandler }>
     <div className="user-box">
-      <input type="text" name="email" id='email' autoComplete='true' placeholder=' ej: javicavalero56@gmail.com' />
+      <input type="text" name="email" id='email' autoComplete='true' required />
       <label htmlFor='email'>Email</label>
     </div>
     <div className="user-box">
-      <input type="password" name="password" id='password' autoComplete='true' placeholder='***********' />
+      <input type="password" name="password" id='password' autoComplete='true' required />
       <label htmlFor='password'>Contraseña</label>
     </div>
     <button type="submit" >
