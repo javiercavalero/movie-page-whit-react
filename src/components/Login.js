@@ -1,11 +1,12 @@
 import axios from 'axios';
-import swAlert from '@sweetalert/with-react'
-import '../styles/login.css'
+import swAlert from '@sweetalert/with-react';
+import {useNavigate} from 'react-router-dom';
+import '../styles/login.css';
 
 
 function Login() {
 
-
+const navigate = useNavigate();
 
 const submitHandler = e => {
     e.preventDefault()
@@ -36,6 +37,7 @@ axios
   const tokenRecibido = res.data.token
   //Guardamos el token en el localStorage del navegador, localStorage solo almacena strings 
   localStorage.setItem('token', tokenRecibido);
+  navigate('listado')
 } )
 }
 
