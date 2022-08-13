@@ -33,8 +33,9 @@ axios
 .post('http://challenge-react.alkemy.org',{email, password})
 .then(res =>{
   swAlert(<h2>Ingresaste correctamente</h2>);
-
-  console.log(res.data)
+  const tokenRecibido = res.data.token
+  //Guardamos el token en el localStorage del navegador, localStorage solo almacena strings 
+  localStorage.setItem('token', tokenRecibido);
 } )
 }
 
