@@ -35,7 +35,7 @@ axios
 .then(res =>{
   swAlert(<h2>Ingresaste correctamente</h2>);
   const tokenRecibido = res.data.token
-  //Guardamos el token en el localStorage del navegador, localStorage solo almacena strings 
+  //Guardamos el token en el sessionStorage del navegador, localStorage solo almacena strings 
   sessionStorage.setItem('token', tokenRecibido);
   navigate('listado')
 } )
