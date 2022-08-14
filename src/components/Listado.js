@@ -5,7 +5,7 @@ import swAlert from '@sweetalert/with-react';
 
 function Listado() {
 
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
 
   const [moviesList, setMoviesList] = useState([]);
 
@@ -21,7 +21,7 @@ function Listado() {
       })
   }, [setMoviesList]);
 
-
+console.log(moviesList);
   if (!token) {
     return <Navigate to={'/'} />
   }
@@ -39,7 +39,7 @@ function Listado() {
               <div className="card-body">
                 <h5 className="card-title">{oneMovie.title.substring(0,20)}...</h5>
                 <p className="card-text">{oneMovie.overview.substring(0,50)}...</p>
-                <Link to="/" className="btn btn-primary">Ver detalle</Link>
+                <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">Ver detalle</Link>
               </div>
             </div>
           </div>
