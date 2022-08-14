@@ -21,7 +21,6 @@ function Listado() {
       })
   }, [setMoviesList]);
 
-console.log(moviesList);
   if (!token) {
     return <Navigate to={'/'} />
   }
