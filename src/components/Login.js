@@ -1,6 +1,6 @@
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Navigate} from 'react-router-dom';
 import '../styles/login.css';
 
 
@@ -39,6 +39,12 @@ axios
   localStorage.setItem('token', tokenRecibido);
   navigate('listado')
 } )
+}
+
+let token = localStorage.getItem('token');
+
+if (token) {
+  return <Navigate to={'/listado'}  />
 }
 
   return (
