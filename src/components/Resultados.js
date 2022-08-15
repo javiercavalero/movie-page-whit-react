@@ -29,8 +29,9 @@ function Resultados() {
             })
     }, [navigate,keyword]);
 
-
-
+    if (moviesResults.length === 0) {
+        return navigate('/listado');
+    }
 
     return (
         <>
