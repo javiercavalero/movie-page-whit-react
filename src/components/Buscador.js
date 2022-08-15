@@ -3,15 +3,19 @@ function Buscador() {
 
     const submitHandler = e => {
         e.preventDefault();
-        const keyword = e.currentTarget.keyword.value;
-
+        const keyword = e.currentTarget.keyword.value.trim();
+console.log(keyword);
         if(keyword.length === 0) {
             swAlert({
                 text: 'Debes ingresar una palabra clave',
             })
-        }
+        }else if (keyword.length < 4) {
+            swAlert({
+                text: 'Debes ingresar más de 4 caracteres',
+            })
 
         };
+    }
     
 
 
