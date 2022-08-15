@@ -7,7 +7,9 @@ import axios from 'axios';
 function Resultados() {
     let query = new URLSearchParams(window.location.search);
     let keyword = query.get('keyword');
+
     const navigate = useNavigate();
+
 
     const [moviesResults, setMoviesResults] = useState([]);
 
@@ -20,18 +22,18 @@ function Resultados() {
                 swAlert({
                     text: `No se encontraron resultados para: ${keyword}`,
                 })
-                navigate(`/listado`);
+                navigate('/listado');
             }
-            setMoviesResults(moviesArray);
+            setMoviesResults(moviesArray); 
+           
         })
             .catch(err => {
                 console.log(err);
             })
-    }, [navigate,keyword]);
 
-    if (moviesResults.length === 0) {
-        return navigate('/listado');
-    }
+    }, [setMoviesResults, keyword, navigate ]);
+
+    
 
     return (
         <>
