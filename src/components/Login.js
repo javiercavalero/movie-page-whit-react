@@ -1,7 +1,6 @@
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
 import {useNavigate, Navigate} from 'react-router-dom';
-import '../styles/login.css';
 
 
 function Login() {

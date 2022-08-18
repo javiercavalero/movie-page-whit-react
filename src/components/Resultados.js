@@ -1,10 +1,13 @@
 import swAlert from '@sweetalert/with-react';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate, Navigate} from 'react-router-dom';
 import axios from 'axios';
 
 
 function Resultados() {
+
+    let token = sessionStorage.getItem('token');
+
     let query = new URLSearchParams(window.location.search);
     let keyword = query.get('keyword');
 
@@ -33,7 +36,11 @@ function Resultados() {
 
     }, [setMoviesResults, keyword, navigate ]);
 
-    
+    if(!token) 
+    {
+        return <Navigate to={'/'} />
+    }
+
 
     return (
         <>
@@ -41,7 +48,7 @@ function Resultados() {
             <div className='row' >
                 {moviesResults.map((oneMovie, idx) => {
                     return (
-                        <div className='col-4 my-3' key={idx} >
+                        <div className='col-3 my-3' key={idx} >
                             <div className="card" >
                                 <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} className="card-img-top" alt="poster de la pelicula" style={{ height: '316px' }} />
                                 <div className="card-body">

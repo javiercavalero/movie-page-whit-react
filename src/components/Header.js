@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Buscador from './Buscador';
-import '../styles/header.css';
 
 function Header() {
 
