@@ -19,10 +19,8 @@ function App() {
 
   if (favMovies === null) {
     tempMoviesInFavs = [];
-  }else{
-
+  } else {
     tempMoviesInFavs = JSON.parse(favMovies);
-
   }
 
   console.log(tempMoviesInFavs);
@@ -43,11 +41,11 @@ function App() {
 
     let movieIsInArray = tempMoviesInFavs.find(oneMovie => oneMovie.id === movieData.id);
 
-    if(!movieIsInArray){
+    if (!movieIsInArray) {
       tempMoviesInFavs.push(movieData);
-    localStorage.setItem('favs', JSON.stringify(tempMoviesInFavs));
-    console.log('pelicula agregada');
-    }else{
+      localStorage.setItem('favs', JSON.stringify(tempMoviesInFavs));
+      console.log('pelicula agregada');
+    } else {
       let moviesLeft = tempMoviesInFavs.filter(oneMovie => oneMovie.id !== movieData.id);
       localStorage.setItem('favs', JSON.stringify(moviesLeft));
       console.log('pelicula eliminada');
@@ -55,7 +53,7 @@ function App() {
 
     }
 
-    
+
   }
 
 
